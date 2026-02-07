@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>كلان WAR - أقوى كلان في سيرفر صخب Discord | انضم الآن</title>
+    <meta name="description" content="كلان WAR في سيرفر صخب Discord - مجتمع قيمنق عربي احترافي. انضم لأقوى كلان في صخب مع أكثر من 30,000 عضو نشط.">
+    <meta name="keywords" content="صخب, سيرفر صخب, ديسكورد صخب, كلان WAR, Discord عربي, سيرفر ديسكورد عربي, مجتمع قيمنق, العاب, كلانات ديسكورد">
+    <meta name="author" content="كلان WAR">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a0a2e 100%);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* Stars Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 31, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 100;
+            border-bottom: 2px solid rgba(178, 31, 31, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e57373;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #themeToggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #themeToggle:hover {
+            transform: rotate(180deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #5e35b1 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: 900;
+            box-shadow: 0 20px 60px rgba(178, 31, 31, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #fff 0%, #e57373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #64b5f6;
+        }
+
+        .hero .description {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: #b21f1f;
+            box-shadow: 0 20px 40px rgba(178, 31, 31, 0.4);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #e57373;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(178, 31, 31, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(178, 31, 31, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #fff 0%, #e57373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #b21f1f;
+            box-shadow: 0 20px 40px rgba(178, 31, 31, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #e57373;
+        }
+
+        .feature-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(-10px);
+            border-color: #b21f1f;
+            box-shadow: 0 10px 30px rgba(178, 31, 31, 0.3);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #64b5f6;
+        }
+
+        /* Members */
+        .leadership {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .member-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            border-color: #b21f1f;
+            box-shadow: 0 20px 40px rgba(178, 31, 31, 0.4);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #e57373;
+        }
+
+        .member-role {
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .members-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .member-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(178, 31, 31, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .member-item:hover {
+            border-color: #b21f1f;
+            transform: translateX(-5px);
+        }
+
+        .member-item-name {
+            font-weight: 700;
+            color: #64b5f6;
+        }
+
+        .member-item-status {
+            background: #4caf50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+
+        /* Requirements */
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .requirement-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .requirement-card:hover {
+            transform: translateY(-10px);
+            border-color: #b21f1f;
+            box-shadow: 0 20px 40px rgba(178, 31, 31, 0.4);
+        }
+
+        .requirement-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .requirement-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #e57373;
+        }
+
+        /* FAQ */
+        .faq-search {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 50px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: #b21f1f;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background: rgba(178, 31, 31, 0.1);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Content Card */
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(10, 10, 31, 0.95);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 2px solid rgba(178, 31, 31, 0.3);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #e57373;
+        }
+
+        /* Back to Top */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        #backToTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(178, 31, 31, 0.5);
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chat-toggle {
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(178, 31, 31, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #4caf50;
+            color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .chat-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 550px;
+            background: rgba(10, 10, 31, 0.98);
+            border-radius: 20px;
+            border: 2px solid rgba(178, 31, 31, 0.5);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-container.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            padding: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-header-title {
+            font-weight: 900;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .online-status {
+            width: 10px;
+            height: 10px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: rgba(178, 31, 31, 0.5);
+            border-radius: 10px;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .message-author {
+            font-weight: 700;
+        }
+
+        .message-author.admin {
+            color: #ffd700;
+        }
+
+        .message-author.bot {
+            color: #64b5f6;
+        }
+
+        .message-author.user {
+            color: #e57373;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        .message-content {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.8rem 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
+
+        .message.bot .message-content {
+            background: rgba(100, 181, 246, 0.15);
+            border-color: rgba(100, 181, 246, 0.3);
+        }
+
+        .message.admin .message-content {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+
+        .chat-typing {
+            display: none;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            width: fit-content;
+        }
+
+        .chat-typing.active {
+            display: block;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #64b5f6;
+            border-radius: 50%;
+            animation: typing 1.4s ease-in-out infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .chat-input-container {
+            padding: 1rem;
+            border-top: 2px solid rgba(178, 31, 31, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .admin-login-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .admin-login-input {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 10px;
+            border: 1px solid rgba(178, 31, 31, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .admin-login-input:focus {
+            outline: none;
+            border-color: #b21f1f;
+        }
+
+        .admin-login-btn {
+            padding: 0.6rem 1rem;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a0a2e;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .admin-login-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .chat-input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border-radius: 25px;
+            border: 2px solid rgba(178, 31, 31, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 0.95rem;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: #b21f1f;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-send {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #b21f1f 0%, #e57373 100%);
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-send:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(178, 31, 31, 0.5);
+        }
+
+        .chat-send:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                background: rgba(10, 10, 31, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: right 0.3s ease;
+                border-left: 2px solid rgba(178, 31, 31, 0.3);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translateY(10px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translateY(-10px);
+            }
+
+            #themeToggle {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .hero {
+                padding: 5rem 1rem 2rem;
+                min-height: 90vh;
+            }
+
+            .hero-logo {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero .description {
+                font-size: 1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .features-grid,
+            .requirements-grid,
+            .leadership {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card,
+            .requirement-card,
+            .member-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon,
+            .requirement-icon {
+                font-size: 2.5rem;
+            }
+
+            .timeline-item {
+                padding: 1.5rem;
+            }
+
+            .timeline-item:hover {
+                transform: none;
+            }
+
+            .members-list {
+                grid-template-columns: 1fr;
+            }
+
+            .content-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #backToTop {
+                width: 45px;
+                height: 45px;
+                bottom: 100px;
+                left: 20px;
+            }
+
+            .chat-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .chat-toggle {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+
+            .chat-container {
+                width: calc(100vw - 40px);
+                height: calc(100vh - 150px);
+                bottom: 75px;
+                right: -10px;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .faq-answer p {
+                padding: 0 1rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+            }
+
+            .hero .description {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .feature-card h3,
+            .requirement-title {
+                font-size: 1.3rem;
+            }
+
+            .timeline-year {
+                font-size: 1rem;
+            }
+
+            .timeline-item h3 {
+                font-size: 1.4rem;
+            }
+
+            .member-name {
+                font-size: 1.2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .chat-container {
+                width: calc(100vw - 20px);
+                right: -5px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .navbar {
+                padding: 0.8rem;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .hero-logo {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="starsContainer"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo">WAR</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">عن الكلان</a></li>
+            <li><a href="#features">المميزات</a></li>
+            <li><a href="#timeline">التاريخ</a></li>
+            <li><a href="#members">الأعضاء</a></li>
+            <li><a href="#requirements">الشروط</a></li>
+            <li><a href="#faq">الأسئلة</a></li>
+            <li><a href="#contact">تواصل</a></li>
+        </ul>
+        <div class="nav-right">
+            <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">⚔️</div>
+            <h1>WAR</h1>
+            <p class="tagline">أقوى كلان في سيرفر صخب</p>
+            <p class="description">
+                انضم لعائلة WAR - مجتمع عربي احترافي يجمع أقوى اللاعبين والأعضاء الملتزمين في سيرفر صخب Discord
+            </p>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">أعضاء نخبة</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">سنوات خبرة</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">احترافية</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="https://discord.gg/WzZHQgfBRD" target="_blank" class="btn btn-primary">
+                    📩 انضم للكلان الآن
+                </a>
+                <a href="https://discord.gg/hSgYynTU" target="_blank" class="btn btn-secondary">
+                    🎮 زيارة سيرفر صخب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">📖 عن الكلان</h2>
+            <div class="content-card">
+                <p style="font-size: 1.3rem; line-height: 2; text-align: center;">
+                    كلان <strong style="color: #e57373;">WAR</strong> هو واحد من أعرق وأقوى الكلانات في سيرفر صخب Discord. 
+                    نحن عائلة من اللاعبين المحترفين والملتزمين الذين يسعون دائماً للتميز والإبداع. 
+                    تأسس الكلان في 2023، وتوقف في 2024، وعاد بقوة في 2025 مع قيادة جديدة ورؤية واضحة.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">⭐ مميزات الانضمام</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>عائلة حقيقية</h3>
+                    <p>نحن لسنا مجرد كلان، بل عائلة تدعم بعضها وتسعى للنجاح معاً</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>قيادة محترفة</h3>
+                    <p>قيادة ذات خبرة وحكمة تضمن بيئة عادلة ومنظمة</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>فعاليات حصرية</h3>
+                    <p>مسابقات وفعاليات دورية مع جوائز قيمة للأعضاء</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>تطوير مستمر</h3>
+                    <p>نساعد الأعضاء على تطوير مهاراتهم والوصول لأعلى المستويات</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>بيئة احترافية</h3>
+                    <p>احترام متبادل والتزام بالقوانين من جميع الأعضاء</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>سمعة قوية</h3>
+                    <p>معروفون في سيرفر صخب بالجودة والاحترافية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">📅 تاريخ الكلان</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">2023</span>
+                    <h3>التأسيس</h3>
+                    <p>تأسس كلان WAR كواحد من أقوى الكلانات في سيرفر صخب، وبدأت رحلة النجاح والتميز</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2024</span>
+                    <h3>التوقف المؤقت</h3>
+                    <p>توقف الكلان بشكل مؤقت بسبب ظروف القيادة، لكن الروح بقيت حية</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-year">2025</span>
+                    <h3>العودة القوية</h3>
+                    <p>عاد الكلان بقوة تحت قيادة ES مع فريق قيادي محترف ورؤية واضحة للمستقبل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members -->
+    <section class="section" id="members">
+        <div class="container">
+            <h2 class="section-title">👥 أعضاء الكلان</h2>
+            
+            <h3 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem; color: #e57373;">👑 القيادة</h3>
+            <div class="leadership">
+                <div class="member-card">
+                    <div class="member-avatar">👑</div>
+                    <div class="member-name">ES</div>
+                    <div class="member-role">القائد الأعلى</div>
+                    <p>المؤسس والقائد</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">⭐</div>
+                    <div class="member-name">ABO Majed 3m</div>
+                    <div class="member-role">نائب القائد</div>
+                    <p>مسؤول التطوير</p>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">⭐</div>
+                    <div class="member-name">M7MD</div>
+                    <div class="member-role">نائب القائد</div>
+                    <p>منظم الفعاليات</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem; font-size: 2.2rem;">⚔️ أعضاء الكلان</h3>
+            <div class="members-list">
+                <div class="member-item">
+                    <div class="member-item-name">𝐬𝐮𝐥𝐭𝐚𝐧 𝐚𝐥𝐚𝐬𝐢𝐫𝐢 .</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">الجوكر</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">rt Rka</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">Jź</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">N2waf_7</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">Yasin</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">M7MD</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">𝐃𝐑𝟕 | 𝑀𝑜7 🃏</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+                <div class="member-item">
+                    <div class="member-item-name">𝐒𝟓𝐁 • 𝐌 𝐈 𝐗</div>
+                    <div class="member-item-status">نشط</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="section" id="requirements">
+        <div class="container">
+            <h2 class="section-title">📋 شروط الانضمام</h2>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-icon">📝</div>
+                    <div class="requirement-title">المستوى الكتابي</div>
+                    <p>لفل 10 كحد أدنى في سيرفر صخب</p>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">🎤</div>
+                    <div class="requirement-title">المستوى الصوتي</div>
+                    <p>لفل 5 في القنوات الصوتية</p>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">⏰</div>
+                    <div class="requirement-title">الالتزام اليومي</div>
+                    <p>النشاط اليومي مطلوب</p>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">🤝</div>
+                    <div class="requirement-title">الاحترام</div>
+                    <p>احترام الجميع والالتزام بالقوانين</p>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">🎯</div>
+                    <div class="requirement-title">الجدية</div>
+                    <p>أعضاء جادين ومحترفين</p>
+                </div>
+
+                <div class="requirement-card">
+                    <div class="requirement-icon">💪</div>
+                    <div class="requirement-title">المساهمة</div>
+                    <p>المشاركة في تطوير الكلان</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title">❓ الأسئلة الشائعة</h2>
+            
+            <div class="faq-search">
+                <input type="text" id="faqSearch" placeholder="🔍 ابحث عن سؤالك..." oninput="searchFAQ()">
+            </div>
+
+            <div class="faq-list" id="faqList"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">📞 تواصل معنا</h2>
+            
+            <div class="content-card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">💬</div>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #e57373;">تواصل مباشر</h3>
+                <p style="margin: 1rem 0;">للأسئلة والاقتراحات</p>
+                <a href="https://discord.com/users/fv6." target="_blank" class="btn btn-primary" style="margin: 1rem 0;">
+                    تواصل على Discord
+                </a>
+                <p style="margin-top: 1rem; opacity: 0.8;">
+                    اليوزر: <strong>fv6.</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://discord.gg/WzZHQgfBRD" target="_blank" class="footer-link">📩 انضم للكلان</a>
+            <a href="https://discord.gg/hSgYynTU" target="_blank" class="footer-link">🎮 سيرفر صخب</a>
+            <a href="#about" class="footer-link">📖 عن الكلان</a>
+            <a href="#members" class="footer-link">👥 الأعضاء</a>
+            <a href="#faq" class="footer-link">❓ الأسئلة</a>
+        </div>
+        <p style="opacity: 0.7; margin-top: 1rem;">
+            © 2025 كلان WAR - جميع الحقوق محفوظة
+        </p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-toggle" onclick="toggleChat()">
+            💬
+            <span class="chat-badge" id="chatBadge">0</span>
+        </button>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <div class="chat-header-title">
+                    <span class="online-status"></span>
+                    دردشة مباشرة
+                </div>
+                <button class="chat-close" onclick="toggleChat()">✕</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-header">
+                        <span class="message-author bot">🤖 البوت</span>
+                        <span class="message-time" id="botTime"></span>
+                    </div>
+                    <div class="message-content">
+                        مرحباً! أنا بوت كلان WAR. يمكنك التواصل مع الأعضاء والإدارة هنا 💬
+                    </div>
+                </div>
+            </div>
+            <div class="chat-typing" id="chatTyping">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <div class="admin-login-container" id="adminLoginContainer">
+                    <input type="password" class="admin-login-input" id="adminPassword" placeholder="رمز الإدارة...">
+                    <button class="admin-login-btn" onclick="adminLogin()">دخول الإدارة</button>
+                </div>
+                <div class="chat-input-wrapper">
+                    <textarea class="chat-input" id="chatInput" placeholder="اكتب رسالتك..." rows="1" onkeypress="handleEnter(event)"></textarea>
+                    <button class="chat-send" onclick="sendMessage()">إرسال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chat System
+        let userNumber = 0;
+        let adminNumber = 0;
+        let isAdmin = false;
+        let messageCount = 0;
+        const ADMIN_PASSWORD = "WAR2025"; // يمكنك تغيير الرمز
+
+        // Bot Responses
+        const botResponses = [
+            "شكراً لتواصلك! الإدارة ستراجع رسالتك قريباً 📨",
+            "تم استلام رسالتك بنجاح! سنرد عليك في أقرب وقت ⏰",
+            "رسالتك وصلت للإدارة! انتظر الرد من فريق WAR 💪",
+            "شكراً! فريق الإدارة سيتواصل معك قريباً 🎯",
+            "تم تسجيل استفسارك! الإدارة في الطريق 🚀",
+            "رسالتك مهمة لنا! سنرد عليك بأسرع وقت ممكن ⚡",
+            "استلمنا رسالتك! فريق WAR يقدر تواصلك 🙏",
+            "شكراً لاهتمامك! الإدارة ستراجع طلبك 📋",
+            "رسالتك في قائمة الانتظار! سنرد قريباً جداً ⏳",
+            "تم! رسالتك وصلت بنجاح للفريق 👍",
+            "شكراً! نحن نعمل على الرد على رسالتك 💼",
+            "تم استلام استفسارك! انتظر رد الإدارة 📞",
+            "رسالتك مسجلة! سنتواصل معك قريباً 📬",
+            "شكراً للتواصل! فريق WAR يحييك 👋",
+            "استلمنا طلبك! الإدارة ستراجعه الآن 🔍"
+        ];
+
+        // Initialize
+        function initializeChat() {
+            // Get user number from localStorage
+            let storedUserNumber = localStorage.getItem('chatUserNumber');
+            if (!storedUserNumber) {
+                // Get last user number from localStorage
+                let lastUserNumber = localStorage.getItem('lastUserNumber') || 0;
+                userNumber = parseInt(lastUserNumber) + 1;
+                localStorage.setItem('chatUserNumber', userNumber);
+                localStorage.setItem('lastUserNumber', userNumber);
+            } else {
+                userNumber = parseInt(storedUserNumber);
+            }
+
+            // Set initial time
+            document.getElementById('botTime').textContent = getCurrentTime();
+        }
+
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function toggleChat() {
+            const container = document.getElementById('chatContainer');
+            container.classList.toggle('active');
+            if (container.classList.contains('active')) {
+                document.getElementById('chatInput').focus();
+                resetBadge();
+            }
+        }
+
+        function adminLogin() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                adminNumber++;
+                document.getElementById('adminLoginContainer').style.display = 'none';
+                addMessage('bot', `مرحباً إدارة ${adminNumber}! تم تسجيل دخولك بنجاح 👑`);
+                document.getElementById('adminPassword').value = '';
+            } else {
+                alert('رمز الإدارة غير صحيح!');
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+
+            const author = isAdmin ? `إدارة ${adminNumber}` : `مستخدم ${userNumber}`;
+            const type = isAdmin ? 'admin' : 'user';
+            
+            addMessage(type, message, author);
+            input.value = '';
+            input.style.height = 'auto';
+
+            // Bot response only for non-admin messages
+            if (!isAdmin) {
+                setTimeout(() => {
+                    showTyping();
+                    setTimeout(() => {
+                        hideTyping();
+                        const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+                        addMessage('bot', randomResponse);
+                    }, 2000);
+                }, 500);
+            }
+        }
+
+        function addMessage(type, content, author = null) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}`;
+            
+            let authorName = author;
+            if (!author) {
+                if (type === 'bot') {
+                    authorName = '🤖 البوت';
+                } else if (type === 'admin') {
+                    authorName = `👑 ${author}`;
+                } else {
+                    authorName = `👤 ${author}`;
+                }
+            }
+
+            messageDiv.innerHTML = `
+                <div class="message-header">
+                    <span class="message-author ${type}">${authorName}</span>
+                    <span class="message-time">${getCurrentTime()}</span>
+                </div>
+                <div class="message-content">${escapeHtml(content)}</div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Update badge if chat is closed
+            if (!document.getElementById('chatContainer').classList.contains('active')) {
+                updateBadge();
+            }
+        }
+
+        function showTyping() {
+            document.getElementById('chatTyping').classList.add('active');
+            const messagesContainer = document.getElementById('chatMessages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('chatTyping').classList.remove('active');
+        }
+
+        function updateBadge() {
+            messageCount++;
+            document.getElementById('chatBadge').textContent = messageCount;
+        }
+
+        function resetBadge() {
+            messageCount = 0;
+            document.getElementById('chatBadge').textContent = '0';
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function handleEnter(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // Auto-resize textarea
+        document.getElementById('chatInput').addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+        });
+
+        // Initialize chat on load
+        initializeChat();
+
+        // Stars
+        function createStars() {
+            const container = document.getElementById('starsContainer');
+            for (let i = 0; i < 120; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+
+        // Mobile Menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuToggle = document.getElementById('menuToggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                document.getElementById('menuToggle').classList.remove('active');
+            });
+        });
+
+        // Back to Top
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            btn.classList.toggle('visible', window.pageYOffset > 300);
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('themeToggle');
+            btn.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+        }
+
+        // FAQ
+        const faqData = [
+            { q: "كيف أنضم لكلان WAR؟", a: "انضم لسيرفر صخب، توجه لقناة التقديم، املأ النموذج وانتظر الموافقة." },
+            { q: "ما هي الشروط؟", a: "لفل 10 كتابي، لفل 5 صوتي، الاحترام والالتزام." },
+            { q: "ما هو سيرفر صخب؟", a: "أكبر مجتمع عربي على Discord للألعاب، يضم 30,000+ عضو نشط." },
+            { q: "متى تأسس الكلان؟", a: "تأسس في 2023، توقف في 2024، وعاد في 2025 بقوة." },
+            { q: "من هم القيادة؟", a: "ES كالقائد الأعلى، و ABO Majed 3m و M7MD كنواب للقيادة." },
+            { q: "كم عدد الأعضاء؟", a: "الكلان يضم 9 أعضاء نخبة ملتزمين." },
+            { q: "هل الكلان نشط؟", a: "نعم! النشاط يومي ومستمر." },
+            { q: "ما مميزات الانضمام؟", a: "عائلة حقيقية، فعاليات حصرية، دعم القيادة." },
+            { q: "هل هناك رسوم؟", a: "لا! الانضمام مجاني 100%." },
+            { q: "ماذا لو لم استطع تحقيق الشروط؟", a: "تواصل مع القيادة وقدم عذرك المقبول." }
+        ];
+
+        function generateFAQ() {
+            const list = document.getElementById('faqList');
+            list.innerHTML = faqData.map((item, i) => `
+                <div class="faq-item" data-question="${item.q.toLowerCase()}">
+                    <div class="faq-question" onclick="toggleFAQ(${i})">
+                        <span>${item.q}</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer"><p>${item.a}</p></div>
+                </div>
+            `).join('');
+        }
+
+        function toggleFAQ(index) {
+            const items = document.querySelectorAll('.faq-item');
+            const item = items[index];
+            const isActive = item.classList.contains('active');
+            items.forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+            const items = document.querySelectorAll('.faq-item');
+            
+            items.forEach(item => {
+                const question = item.getAttribute('data-question');
+                if (question.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        generateFAQ();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
